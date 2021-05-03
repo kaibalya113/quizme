@@ -40,7 +40,7 @@ public class CategoryModel {
     //toString
 
     @Override
-    public String toString() {
+    public String  toString() {
         return "CategoryModel{" +
                 "categoryId='" + categoryId + '\'' +
                 ", categoryName='" + categoryName + '\'' +

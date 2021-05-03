@@ -46,13 +46,12 @@
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone"
                     android:ems="10"
                     android:id="@+id/password" android:hint="Password" android:background="@drawable/text_box"
                     android:layout_margin="10dp" android:padding="15dp" android:textColor="#FBFBFB"
                     android:drawableTint="@color/color_white"
                     android:textColorHint="#FFFFFF" android:drawableLeft="@drawable/password"
-                    android:drawablePadding="15dp"/>
+                    android:drawablePadding="15dp" android:inputType="textPassword"/>
             <Button
                     android:text="Login"
                     android:layout_width="match_parent"
