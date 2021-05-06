@@ -57,6 +57,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/btnLog"
                     android:background="@drawable/submit_button" android:textColor="#FFFFFF" android:textStyle="bold"/>
+            <Button
+                    android:text="Don't have account?"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/signupbtn" android:layout_marginTop="20dp"
+                    android:background="@drawable/submit_button"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

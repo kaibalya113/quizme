@@ -28,31 +28,40 @@ public class LoginActivity extends AppCompatActivity {
         //
         auth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Logging in...");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progressDialog.setIndeterminate(true);
         if(auth.getCurrentUser() != null){
+            progressDialog.show();
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            progressDialog.dismiss();
             finish();
         }
+        activityLoginBinding.signupbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+            }
+        });
         activityLoginBinding.btnLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email, pass;
                 email = activityLoginBinding.emailBox.getText().toString();
                 pass = activityLoginBinding.password.getText().toString();
-                progressDialog.setMessage("Logging in...");
-                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                progressDialog.setIndeterminate(true);
-               // progressDialog.show();
+
+                progressDialog.show();
 
                 auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                           // progressDialog.dismiss();
+                            progressDialog.dismiss();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             Toast.makeText(LoginActivity.this, "Login Sucessfull", Toast.LENGTH_SHORT).show();
                             finish();
                         }else{
-                           // progressDialog.dismiss();
+                            progressDialog.dismiss();
                             Toast.makeText(LoginActivity.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }

@@ -5,12 +5,14 @@ public class    User {
     private String password;
     private String phNumber;
     private String email;
+    private long coins ;
 
-    public User(String name, String password, String phNumber, String email) {
+    public User(String name, String password, String phNumber, String email, long coins) {
         this.name = name;
         this.password = password;
         this.phNumber = phNumber;
         this.email = email;
+        this.coins = coins;
     }
 
     public User(){}
@@ -18,11 +20,20 @@ public class    User {
     @Override
     public String toString() {
         return "User{" +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", phNumber='" + phNumber + '\'' +
                 ", email='" + email + '\'' +
+                ", coins=" + coins +
                 '}';
+    }
+
+    public long getCoins() {
+        return coins;
+    }
+
+    public void setCoins(long coins) {
+        this.coins = coins;
     }
 
     public String getName() {

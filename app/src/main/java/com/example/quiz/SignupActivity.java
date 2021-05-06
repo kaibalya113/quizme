@@ -48,8 +48,8 @@ public class SignupActivity extends AppCompatActivity {
                 pass = activitySignupBinding.password.getText().toString();
                 name = activitySignupBinding.nameBox.getText().toString();
                 number = activitySignupBinding.phoneNumbr.getText().toString();
-
-                final User user = new User(name, pass, number, email);
+                long coins = 0;
+                final User user = new User(name, pass, number, email, coins);
                 progressDialog.setMessage("Creating user... ");
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
                 progressDialog.setIndeterminate(true);
